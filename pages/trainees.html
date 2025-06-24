@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trainee Profiles - Hot Beans Web</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    /* Navigation underline */
+    nav a {
+      position: relative;
+      padding-bottom: 4px;
+      font-weight: 700;
+      color: #eee;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      color: #fff;
+      outline: none;
+    }
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans antialiased min-h-screen flex flex-col">
+
+  <header class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between">
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-wide mb-6 md:mb-0" style="letter-spacing: 0.05em;">HOT BEANS WEB</h1>
+    <nav class="flex space-x-12 text-lg">
+      <a href="index.html">Home</a>
+      <a href="company.html">Company</a>
+      <a href="trainees.html" class="font-bold">Trainees</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="apply.html">Apply</a>
+      <a href="courses.html">Courses</a>
+    </nav>
+  </header>
+
+  <main class="flex-grow max-w-5xl mx-auto px-6 py-20">
+    <h2 class="text-5xl font-extrabold mb-12">Meet Our Trainees</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div class="bg-gray-900 p-8 rounded-md shadow-lg">
+        <h3 class="font-semibold text-2xl mb-3">Alex Johnson</h3>
+        <p class="text-gray-400 leading-relaxed">Skilled in HTML, CSS, and JavaScript. Passionate about responsive design and creating seamless user experiences.</p>
+      </div>
+      <div class="bg-gray-900 p-8 rounded-md shadow-lg">
+        <h3 class="font-semibold text-2xl mb-3">Maria Lee</h3>
+        <p class="text-gray-400 leading-relaxed">Enjoys working with front-end frameworks like React. Strong advocate for UX best practices and accessibility.</p>
+      </div>
+      <div class="bg-gray-900 p-8 rounded-md shadow-lg">
+        <h3 class="font-semibold text-2xl mb-3">Sam Patel</h3>
+        <p class="text-gray-400 leading-relaxed">Back-end enthusiast with experience in Node.js and Express. Focused on building scalable APIs and databases.</p>
+      </div>
+      <div class="bg-gray-900 p-8 rounded-md shadow-lg">
+        <h3 class="font-semibold text-2xl mb-3">Lily Chen</h3>
+        <p class="text-gray-400 leading-relaxed">Full-stack learner with strong skills in JavaScript and MongoDB. Interested in cloud deployments and DevOps.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="max-w-6xl mx-auto px-6 py-12 border-t border-gray-700 text-center text-sm text-gray-500 select-none">
+    &copy; 2025 Hot Beans Web. All rights reserved.
+  </footer>
+
+</body>
+</html>
