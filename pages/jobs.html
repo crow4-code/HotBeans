@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jobs - Hot Beans Web</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    /* Navigation underline */
+    nav a {
+      position: relative;
+      padding-bottom: 4px;
+      font-weight: 700;
+      color: #eee;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      color: #fff;
+      outline: none;
+    }
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+
+    /* Glowing orb cursor */
+    .cursor-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      pointer-events: none;
+      border-radius: 50%;
+      background: white;
+      box-shadow:
+        0 0 6px rgba(255, 255, 255, 0.9),
+        0 0 10px rgba(255, 255, 255, 0.7),
+        0 0 16px rgba(255, 255, 255, 0.6);
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      transition: transform 0.03s linear;
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Cursor glowing orb -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- Header -->
+  <header class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between">
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-wide mb-6 md:mb-0" style="letter-spacing: 0.05em;">HOT BEANS WEB</h1>
+    <nav class="flex space-x-12 text-lg">
+      <a href="index.html">Home</a>
+      <a href="company.html">Company</a>
+      <a href="trainees.html">Trainees</a>
+      <a href="jobs.html" class="font-bold">Jobs</a>
+      <a href="apply.html">Apply</a>
+      <a href="courses.html">Courses</a>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main class="flex-grow max-w-5xl mx-auto px-6 py-20">
+    <h2 class="text-5xl font-extrabold mb-4">Current Job Openings</h2>
+    <p class="text-gray-400 mb-12 max-w-3xl">
+      Explore exciting opportunities to join our dynamic team at Hot Beans Web. We’re looking for talented developers passionate about building innovative web solutions.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- Job 1 -->
+      <section class="bg-gray-900 p-8 rounded-md shadow-lg">
+        <h3 class="text-3xl font-semibold mb-3">Frontend Developer</h3>
+        <p class="text-gray-400 mb-4">Work on responsive UI, React components, and ensure smooth user experiences.</p>
+        <ul class="list-disc list-inside text-gray-400 space-y-1">
+          <li>Strong HTML, CSS, and JavaScript skills</li>
+          <li>Experience with React or similar frameworks</li>
+          <li>Good understanding of accessibility and UX best practices</li>
+        </ul>
+      </section>
+
+      <!-- Job 2 -->
+      <section class="bg-gray-900 p-8 rounded-md shadow-lg">
+        <h3 class="text-3xl font-semibold mb-3">Backend Developer</h3>
+        <p class="text-gray-400 mb-4">Build and maintain scalable APIs using Node.js and Express.</p>
+        <ul class="list-disc list-inside text-gray-400 space-y-1">
+          <li>Proficient in Node.js and Express</li>
+          <li>Experience with database design and management</li>
+          <li>Knowledge of RESTful API development</li>
+        </ul>
+      </section>
+
+      <!-- Job 3 (full width on small screens, spans 2 columns on medium and up) -->
+      <section class="bg-gray-900 p-8 rounded-md shadow-lg md:col-span-2">
+        <h3 class="text-3xl font-semibold mb-3">Full-stack Developer</h3>
+        <p class="text-gray-400 mb-4">Develop full-stack solutions with JavaScript, MongoDB, and cloud deployments.</p>
+        <ul class="list-disc list-inside text-gray-400 space-y-1">
+          <li>Strong JavaScript knowledge</li>
+          <li>Experience with MongoDB and cloud services</li>
+          <li>Familiarity with DevOps principles</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="max-w-6xl mx-auto px-6 py-12 border-t border-gray-700 text-center text-sm text-gray-500 select-none">
+    &copy; 2025 Hot Beans Web. All rights reserved.
+  </footer>
+
+  <!-- Cursor glow JS -->
+  <script>
+    const glow = document.getElementById('cursor-glow');
+    document.addEventListener('mousemove', (e) => {
+      glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+  </script>
+</body>
+</html>
