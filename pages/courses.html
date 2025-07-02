@@ -33,15 +33,34 @@
     nav a:focus::after {
       width: 100%;
     }
+
+    /* White glowing cursor orb */
+    #cursor-orb {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      background: white;
+      border-radius: 50%;
+      pointer-events: none;
+      box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.4);
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.05s ease;
+    }
   </style>
 </head>
 <body class="bg-black text-white font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Cursor Orb -->
+  <div id="cursor-orb"></div>
 
   <header class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between">
     <h1 class="text-4xl md:text-5xl font-extrabold tracking-wide mb-6 md:mb-0" style="letter-spacing: 0.05em;">HOT BEANS WEB</h1>
     <nav class="flex space-x-12 text-lg">
       <a href="../index.html">Home</a>
-      <a href="company.html">Company</a>
+      <a href="aboutus.html">Company</a>
       <a href="trainees.html">Trainees</a>
       <a href="jobs.html">Jobs</a>
       <a href="apply.html">Apply</a>
@@ -71,5 +90,12 @@
     &copy; 2025 Hot Beans Web. All rights reserved.
   </footer>
 
+  <script>
+    const orb = document.getElementById("cursor-orb");
+
+    document.addEventListener("mousemove", (e) => {
+      orb.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+  </script>
 </body>
 </html>
