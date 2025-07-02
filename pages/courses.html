@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recommended Courses - Hot Beans Web</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    /* Navigation underline effect */
+    nav a {
+      position: relative;
+      padding-bottom: 4px;
+      font-weight: 700;
+      color: #eee;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      color: #fff;
+      outline: none;
+    }
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans antialiased min-h-screen flex flex-col">
+
+  <header class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between">
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-wide mb-6 md:mb-0" style="letter-spacing: 0.05em;">HOT BEANS WEB</h1>
+    <nav class="flex space-x-12 text-lg">
+      <a href="index.html">Home</a>
+      <a href="company.html">Company</a>
+      <a href="trainees.html">Trainees</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="apply.html">Apply</a>
+      <a href="courses.html" class="font-bold">Courses</a>
+    </nav>
+  </header>
+
+  <main class="flex-grow max-w-5xl mx-auto px-6 py-20">
+    <h2 class="text-5xl font-extrabold mb-12">Recommended Courses</h2>
+    <ul class="list-disc list-inside space-y-6 text-gray-300 text-xl max-w-3xl">
+      <li>
+        <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer" class="hover:underline text-white font-semibold">freeCodeCamp</a> - Free, comprehensive coding courses with hands-on projects.
+      </li>
+      <li>
+        <a href="https://www.codecademy.com/" target="_blank" rel="noopener noreferrer" class="hover:underline text-white font-semibold">Codecademy</a> - Interactive learning platform for various programming languages and web development.
+      </li>
+      <li>
+        <a href="https://www.coursera.org/" target="_blank" rel="noopener noreferrer" class="hover:underline text-white font-semibold">Coursera Web Development Specializations</a> - University-level courses with certification.
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/" target="_blank" rel="noopener noreferrer" class="hover:underline text-white font-semibold">MDN Web Docs</a> - Extensive documentation and tutorials by Mozilla.
+      </li>
+    </ul>
+  </main>
+
+  <footer class="max-w-6xl mx-auto px-6 py-12 border-t border-gray-700 text-center text-sm text-gray-500 select-none">
+    &copy; 2025 Hot Beans Web. All rights reserved.
+  </footer>
+
+</body>
+</html>
