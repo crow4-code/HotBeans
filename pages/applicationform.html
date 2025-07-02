@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apply for a Job - Hot Beans Web</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    /* Cursor glow */
+    .cursor-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      pointer-events: none;
+      border-radius: 50%;
+      background: white;
+      box-shadow:
+        0 0 6px rgba(255, 255, 255, 0.9),
+        0 0 10px rgba(255, 255, 255, 0.7),
+        0 0 16px rgba(255, 255, 255, 0.6);
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      transition: transform 0.03s linear;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 2px;
+      font-weight: 600;
+      color: #eee;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      color: #fff;
+      outline: none;
+    }
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Glowing orb element -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <header class="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
+    <h1 class="text-3xl font-bold tracking-wide mb-4 md:mb-0">HOT BEANS WEB</h1>
+    <nav class="flex space-x-6">
+      <a href="index.html">Home</a>
+      <a href="company.html">Company</a>
+      <a href="trainees.html">Trainees</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="apply.html" class="font-bold">Apply</a>
+      <a href="courses.html">Courses</a>
+    </nav>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <h2 class="text-2xl font-bold mb-6">Apply for a Position</h2>
+    <p class="mb-8 text-gray-300 text-sm">
+      Interested in joining Hot Beans Web? Fill out the form below to apply for one of our current job openings. We’re excited to hear from you!
+    </p>
+
+    <form class="bg-gray-800 p-6 rounded-lg shadow-md space-y-6">
+      <div>
+        <label for="name" class="block text-sm font-semibold mb-1">Full Name</label>
+        <input type="text" id="name" name="name" required class="w-full px-4 py-2 bg-gray-700 text-white rounded focus:outline-none focus:ring-2 focus:ring-red-500" />
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-semibold mb-1">Email Address</label>
+        <input type="email" id="email" name="email" required class="w-full px-4 py-2 bg-gray-700 text-white rounded focus:outline-none focus:ring-2 focus:ring-red-500" />
+      </div>
+
+      <div>
+        <label for="position" class="block text-sm font-semibold mb-1">Position Applying For</label>
+        <select id="position" name="position" required class="w-full px-4 py-2 bg-gray-700 text-white rounded focus:outline-none focus:ring-2 focus:ring-red-500">
+          <option value="">Select a position</option>
+          <option value="junior">Junior Web Developer</option>
+          <option value="frontend">Front-End Developer</option>
+          <option value="backend">Back-End Developer</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-semibold mb-1">Tell us about yourself</label>
+        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 bg-gray-700 text-white rounded focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
+      </div>
+
+      <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2 rounded">
+        Submit Application
+      </button>
+    </form>
+  </main>
+
+  <footer class="max-w-6xl mx-auto px-4 py-8 border-t border-gray-700 text-center text-xs text-gray-500">
+    &copy; 2025 Hot Beans Web. All rights reserved.
+  </footer>
+
+  <!-- JavaScript for glowing cursor -->
+  <script>
+    const glow = document.getElementById('cursor-glow');
+    document.addEventListener('mousemove', (e) => {
+      glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+  </script>
+</body>
+</html>
